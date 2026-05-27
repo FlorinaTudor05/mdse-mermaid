@@ -1,0 +1,16 @@
+sequenceDiagram
+actor U as User
+participant W as Web App
+participant A as Auth Service
+participant D as Database
+U->>W: POST /api/login
+W->>A: validate(credentials)
+A->>D: query user
+D-->>A: user record
+alt valid credentials
+A-->>W: JWT token
+W-->>U: redirect to dashboard
+else invalid credentials
+A-->>W: auth failed
+W-->>U: Show error
+end

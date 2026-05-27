@@ -1,0 +1,5 @@
+node_modules/
+example/*.png
+example/*.svg
+example/.validate-tmp.png
+*.log

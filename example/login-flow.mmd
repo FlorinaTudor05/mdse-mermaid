@@ -1,0 +1,8 @@
+flowchart TD
+A([User]) --> B[Login Page]
+B --> C{Valid credentials?}
+C -->|yes| D[Create Session]
+C -->|no| E[Show Error]
+subgraph Auth["Auth Service"]
+C
+end

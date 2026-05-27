@@ -1,0 +1,15 @@
+{
+  "name": "mdse-mermaid",
+  "version": "1.0.0",
+  "description": "Diagram editing with Mermaid - MDSE case study",
+  "private": true,
+  "scripts": {
+    "export:flowchart": "mmdc -i example/login-flow.mmd -o example/login-flow.png",
+    "export:sequence": "mmdc -i example/login-flow-sequence.mmd -o example/login-flow-sequence.png",
+    "export:all": "npm run export:flowchart && npm run export:sequence",
+    "validate": "mmdc -i example/login-flow.mmd -o example/.validate-tmp.png && mmdc -i example/login-flow-sequence.mmd -o example/.validate-tmp.png && del example\\.validate-tmp.png"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.4.2"
+  }
+}
